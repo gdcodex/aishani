@@ -104,11 +104,14 @@
     display: inline-block;
     width: 20px;
     margin: auto;
+    cursor: pointer;
   
     
 }
 input:focus{
     outline: none;
+    background: rgb(214, 197, 214);
+    color: rgb(81, 82, 79);
    
 }
 

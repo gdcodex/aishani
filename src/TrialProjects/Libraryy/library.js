@@ -1,7 +1,9 @@
 import React from 'react';
-import Content from '../Explore/content';
+import Content from './content';
+import Recent from './recent';
 import Nav from '../Homepage/Navbar';
 import './libra.css';
+
 
 const Libra =()=>{
     return(
@@ -9,6 +11,7 @@ const Libra =()=>{
             <div className="libra">
                 <Nav/>
                 <Content/>
+                <Recent/>
             </div>
         </>
     )
