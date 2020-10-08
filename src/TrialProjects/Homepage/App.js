@@ -31,6 +31,7 @@ const App = () =>{
           <FirstName.Provider  value={Change.a}>  <Route path='/aish' exact component={Home} />   </FirstName.Provider>
           <FirstName.Provider  value={Change.b}>  <Route path='/explore' exact component={Explore} />   </FirstName.Provider>
           <FirstName.Provider  value={Change.c}>  <Route path='/library' exact component={Libra} />   </FirstName.Provider>
+          <FirstName.Provider  value={Change.c}>  <Route path='/library/:id' exact component={Libra} />   </FirstName.Provider>
           <FirstName.Provider  value={Change.d}>  <Route path='/signup' exact component={Sture} />   </FirstName.Provider>
             
         </Router>

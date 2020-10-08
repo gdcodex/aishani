@@ -49,9 +49,6 @@
    
 }
 
-#lbh4{
-    background-color:rgb(103, 173, 144);
-}
 
 #lib1, #lib2,#lib3,#lib4{
     margin-bottom: 10px;
@@ -70,7 +67,8 @@
     border-left: 3px solid rgb(103, 173, 144);
 
 }
-.lbhead{
+/*.lbhead*/
+.lib-head a{
     color: seashell;
     background: rgb(92, 88, 88);
     width: 98%;
@@ -81,9 +79,17 @@
     align-items: center;
     justify-content: center; 
     cursor: pointer;
+    text-decoration: none;
 }
-.lbhead:hover{
+.lib-head a:hover{
     background: rgba(188, 143, 143, 0.459);
+}
+
+.lib-head .lbh{
+    background-color:rgb(103, 173, 144);
+}
+.lib-head .lbh:hover{
+    background-color:rgb(103, 173, 144);
 }
 .lib-body{
     display: grid;
