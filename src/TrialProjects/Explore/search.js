@@ -5,7 +5,7 @@ const Magnify = () => {
     return(
         <>
             <div className="my-song">
-                <input type="text" className="find-song"/>
+                <input type="text" className="find-song" placeholder="Search your favourite artist/track"/>
                 <img src={find} alt="" id='find'/>
             </div>
         </>

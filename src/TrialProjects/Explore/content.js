@@ -9,15 +9,15 @@ const Content =()=>{
     return(
         <>
             <div className={change.b}>
-                <div className="mood" id="md1">{Pop}</div>
-                <div className="mood" id="md2">{Party}</div>
-                <div className="mood" id="md3">{Workout}</div>
-                <div className="mood" id="md4">{Chill}</div>
-                <div className="mood" id="md5">{R&B Soul}</div>
-                <div className="mood" id="md6">{Hip-hop}</div>
-                <div className="mood" id="md7">{Romance}</div>
-                <div className="mood" id="md8">{Oldies}</div>
-                <div className="mood" id="md9">{Devotional}</div>
+                <div className="mood" id="md1">{change.types.a}</div>
+                <div className="mood" id="md2">{change.types.b}</div>
+                <div className="mood" id="md3">{change.types.c}</div>
+                <div className="mood" id="md4">{change.types.d}</div>
+                <div className="mood" id="md5">{change.types.e}</div>
+                <div className="mood" id="md6">{change.types.f}</div>
+                <div className="mood" id="md7">{change.types.g}</div>
+                <div className="mood" id="md8">{change.types.h}</div>
+                <div className="mood" id="md9">{change.types.i}</div>
             </div>
             <Router>
             <Route path="/explore" exact>

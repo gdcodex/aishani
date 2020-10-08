@@ -95,6 +95,8 @@
         padding: 3px 15px;
         border: none;
         border-radius: 10px;
+        text-align: center;
+        border-right: 0.8px solid orchid;
     }
    
 #find{
@@ -102,6 +104,12 @@
     display: inline-block;
     width: 20px;
     margin: auto;
+  
+    
+}
+input:focus{
+    outline: none;
+   
 }
 
 
