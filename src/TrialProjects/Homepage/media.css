@@ -1,0 +1,25 @@
+@media only screen and (min-width: 768px) and (max-width:1200px){
+.my-svg{
+   
+    /* background: rgb(228, 141, 141); */
+    position: absolute;
+   
+  
+}
+.my-svg h1{
+ 
+    left: 0%;
+    animation: none;
+    transform: scale(1.5);
+}
+
+
+.nav-ul{
+    position: relative;
+    top: 20%;
+}
+svg{
+   width: 30%;
+}
+
+}

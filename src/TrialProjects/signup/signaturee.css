@@ -1,0 +1,40 @@
+.sss{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-image: linear-gradient(to right, #bba527  0%, #fa709a 100%);
+    background-image: linear-gradient(to top, #5d5a5b 0%, #3c3b3b 100%);
+}
+
+
+
+.na {
+    
+    list-style: none;
+    font:400 ;
+    color: seashell;
+    font-weight: bold;
+    position: absolute;
+    border: 1.5px solid rgb(218, 184, 93);
+    border: 1.5px solid rgb(97 91 101); 
+    border-radius: 10px;
+    text-align: center;
+    z-index: 3;
+    /* opacity: 0; */
+    /* animation: opacc 2s ease-in ;
+    animation-delay: 6s;
+    animation-fill-mode: forwards; */
+}
+.na li{
+    margin: 40px;
+    border: 1px solid whitesmoke;
+    border: 1px solid rgb(92, 88, 88);
+    border-radius: 10px;
+    /* padding: 8px 12px; */
+    color: seashell;
+}
+.na li .ish{
+    background:#fa709a;
+}
+

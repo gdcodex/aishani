@@ -1,0 +1,52 @@
+.libra{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-image: linear-gradient(to left,#72afd3 0%,   #3dc59f  100%);
+    background-image: linear-gradient(to top, #5d5a5b 0%, #3c3b3b 100%);
+}
+
+
+.navu {
+    
+    list-style: none;
+    font:400 ;
+    color: seashell;
+    font-weight: bold;
+    position: absolute;
+    border: 1.5px solid rgb(103, 173, 144);
+    border: 1.5px solid rgb(97 91 101); 
+    border-radius: 10px;
+    text-align: center;
+    z-index: 3;
+    /* opacity: 0; */
+    /* animation: opacc 2s ease-in ;
+    animation-delay: 6s;
+    animation-fill-mode: forwards; */
+}
+.navu li{
+    margin: 40px;
+    border: 1px solid whitesmoke;
+    border: 1px solid rgb(92, 88, 88);
+    border-radius: 10px;
+    /* padding: 8px 12px; */
+    color: seashell;
+}
+.navu li .ish{
+    background:rgb(103, 173, 144);
+}
+
+
+.enre{
+    display: grid;
+    width: 50%;
+    margin: auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 38px;
+    align-items: center;
+    text-align: center;
+    border-left: 3px solid rgb(103, 173, 144);
+}

@@ -4,6 +4,9 @@ import Effect from "./useEffect";
 
 const FirstName = createContext();
 const array = { a: "Gerem", b: "Daim" }
+
+
+
 const App = () => {
     return (<FirstName.Provider value={array}>
         <Effect />

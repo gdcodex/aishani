@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+ 
+}
+svg{
+   width: 28vw;
+   transform: translateY(-5vw);
+}
+#shoe{
+    animation: sway 2s ease-in-out  infinite alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes sway{
+    from{
+        transform: rotateZ(-30deg);
+    }
+    to{
+        transform: rotateZ(4deg);
+    }
+}
+#body,#hair{
+    animation: down 2s ease-out  infinite alternate;
+    
+  
+}
+
+@keyframes down{
+    from{
+        transform:translateY(-6px)
+    }
+    to{
+        transform: translateY(14px)
+    }
+}
+
+
+.home{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+   
+    position: relative;
+    background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+
+
+.my-svg{
+    width: 100vw;
+    height: fit-content;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(6vw);
+    /* border: 2px solid red; */
+
+}
+
+.landing{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: #BE93C5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #7BC6CC, #BE93C5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #7BC6CC, #BE93C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+    animation: landing 2s ease ;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+    font-style: italic;
+}
+
+@keyframes landing{
+    from{
+        height:100vh;
+     
+
+    }
+    to{
+        height: 0;
+       
+    }
+}
+
+
+.aish{
+    opacity: 0;
+    position: relative;
+    animation: opac 4s ease ;
+    animation-fill-mode: forwards;
+    font-size: 80px;
+    z-index: 10;
+}
+
+@keyframes opac{
+    0%{
+        opacity: none;
+        top: -60px;
+        color: white;
+       
+       
+    }
+    75%{
+        color: white;
+    }
+    100%{
+        opacity: 1;
+        top: 60px;
+        color: white;
+
+       
+    }
+}
+span{
+    animation: opa 4s ease ;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes opa{
+    0%{
+        opacity: none;
+        color: white;
+       
+       
+    }
+    75%{
+        color: white;
+    }
+    to{
+        opacity: 1;
+       
+        color: rgb(165, 93, 129);
+
+       
+    }
+}
+.listen{
+   position: relative;
+    top: -27%;
+    left: 1%;
+    font-size: 8px;
+    padding: 10px 40px;
+    background-color: rgb(104, 72, 50);
+    color: rgba(255, 255, 255);
+    border-radius: 30px;
+    cursor: pointer;
+    animation: swa 2s ease-in-out  infinite alternate;
+}
+
+@keyframes swa{
+    0%{
+        
+        font-size: 3px;
+        background-color: thistle;
+    }
+    30%{
+          font-size: 3px;
+    }
+    to{
+        font-size: 10px;
+        
+    }
+}
+.listen:hover{
+    animation: none;
+}
