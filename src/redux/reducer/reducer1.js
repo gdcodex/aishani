@@ -3,7 +3,14 @@ const initState= {
 };
 
 const reducer1 = (state=initState,action)=>{
-    return state;
+    switch (action.type){
+        case 'RESET':
+            return {posts:[]};
+            case 'CREATE':
+            return {post:['created !!']}
+        default:
+            return state;    
+    }
 };
 
 export default reducer1;

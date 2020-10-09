@@ -1,14 +1,14 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 //import {connect} from 'react-redux';
-import {change} from '../../actions';
+import {change,reset,createSomething} from '../../actions';
 
 
 
 
 
 const App = ()=>{
-    const posts = useSelector(state=>state.reducer1.posts[0]);
+    const posts = useSelector(state=>state.reducer1.posts);
     const reducer2 = useSelector(state=>state.reducer2);
 
     const dispatch =useDispatch();
@@ -17,9 +17,10 @@ const App = ()=>{
 
     return(
         <>
-         <div><h1>Hey buddy gerem {posts} !</h1></div>
+         <div><h1>Hey buddy gerem {posts[0]} !</h1></div>
          {<h2> It's {`${reducer2}`} gd </h2>}
          <button onClick={()=>dispatch(change())}>Change</button>
+         <button onClick={()=>dispatch(reset())}>Reset</button>
         </> 
          )
 };
@@ -35,3 +36,5 @@ const App = ()=>{
 
 
 export default App;
+
+

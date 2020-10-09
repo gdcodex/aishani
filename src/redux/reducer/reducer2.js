@@ -3,8 +3,8 @@
         case 'IN_OUT':
             return !state;
         default:
-            return false;  
+            return state;  
     }
-    return false;
+    
 };
 export default reducer2;
