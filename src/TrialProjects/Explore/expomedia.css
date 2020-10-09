@@ -1,0 +1,35 @@
+@media  screen and (max-width: 1300px) {
+    .navul li {
+      
+      margin:20px;
+      
+    }
+    
+  }
+@media  screen and (max-width: 1000px) {
+    .navul li {
+      
+      margin:10px;
+      
+    }
+  
+  }
+   
+@media  screen and (max-width: 900px) {
+    .navul{
+        transform: translateX(5vw);
+    }
+    
+  }
+@media  screen and (max-width: 650px) {
+    .navul{
+        transform: translate(5vw,6vw);
+    }
+    .navul li a {
+      
+        padding: 5px;
+        
+      }
+    
+  }
+   

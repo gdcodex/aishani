@@ -2,6 +2,7 @@ import React, {useState,useContext} from 'react';
 import Nav from '../Homepage/Navbar';
 import Content from './content';
 import './explore.css';
+import './expomedia.css';
 
 const  Explore = () => {
 
