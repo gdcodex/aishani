@@ -1,0 +1,43 @@
+@media  screen and (max-width: 1300px) {
+    .navu li {
+      
+      margin:20px;
+      
+    }
+    .lib-body{
+        margin-top: 3vw;
+    }
+  }
+@media  screen and (max-width: 1000px) {
+    .navu li {
+      
+      margin:10px;
+      
+    }
+    .lib-body{
+        margin-top: 4vw;
+    }
+  }
+   
+@media  screen and (max-width: 900px) {
+    .navu{
+        transform: translateX(5vw);
+    }
+    .lib-body{
+        margin-top: 5vw;
+    }
+  }
+@media  screen and (max-width: 650px) {
+    .navu{
+        transform: translate(5vw,6vw);
+    }
+    .navu li a {
+      
+        padding: 5px;
+        
+      }
+    .lib-body{
+        margin-top: 7vw;
+    }
+  }
+   

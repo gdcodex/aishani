@@ -97,7 +97,7 @@
     display: grid;
     margin-top: 2vw;
     grid-template-columns:repeat(4, 1fr);
-    grid-template-rows: 18fr 18fr 18fr 6fr;
+    grid-template-rows: 18fr 18fr 18fr  6fr;
     grid-column-gap: 2%;
     grid-row-gap: 5%;
     align-items: center;
@@ -120,6 +120,7 @@
     align-items: center;
     justify-content: center;
     color: seashell;
+    
     
 }
 
@@ -152,3 +153,12 @@
     width: 14vw;
     cursor: pointer;
 }
+
+
+/* @media  screen and (max-width: 1000px) {
+    .libra {
+      
+      display: none;
+      
+    }
+  } */

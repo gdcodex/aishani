@@ -3,6 +3,7 @@ import Content from './content';
 import Recent from './recent';
 import Nav from '../Homepage/Navbar';
 import './libra.css';
+import './libramedia.css';
 
 
 const Libra =()=>{
