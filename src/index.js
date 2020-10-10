@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './TrialProjects/Calculator/App';
+import App from './TrialProjects/Todolist/App';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import rootReducers from './redux/reducer/rootReducer';

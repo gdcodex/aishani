@@ -41,22 +41,29 @@ function Numbers() {
     return (
         <>
             <div className={( classs===true?"calculator-layout":"night-layout" )}>
+                
+                {/*heading of the app*/}
                 <div className="title"><h2>Calculator</h2> <img className="night" style={{display:(classs===true?"none":"inline-block")}} onClick={change} src="https://www.flaticon.com/svg/static/icons/svg/1497/1497625.svg" alt=""/> <img src="/images/day.svg" style={{display:(classs===false?"none":"inline-block")}} onClick={change} alt="" className="day"/></div>
+
+
                 {/*display of input*/}
-                <div id="show" style={{backgroundColor:(classs===false?"#464141":"rgb(81 93 92)"),color:(classs===true?"rgb(245, 132, 2)":"white")}} >{number}</div>
-                <div className="template">
+                <div id="show" style={{backgroundColor:(classs===false?"#464141":"rgb(81 93 92)"),color:(classs===true?"white":"rgb(245, 132, 2)")}} >{number}</div>
+
+
+
                 {/*number template*/}
+                <div className="template">
                 <div className="num">
                 {array.map((e) => <button key={e} className="numbers" value={e} onClick={display}>{" "}{e}</button>)}
                 </div>
-                <div className="side-opera">
+
+
+
                 {/*operators*/}
+                <div className="side-opera">
                 {opeArray.map((e) => <button key={e} value={e} onClick={display} >{e}</button>)}
-                {/*clear input*/}
                 <button onClick={() => setnumber(number.substr(0, number.length - 1))}>  Clear </button>
-                {/* clear all */}
                 <button onClick={() => setnumber("")} value="">AC</button>
-                {/*To evaluate the value*/}
                 <button onClick={Evaluate} value="=">=</button>
                 </div>
                 </div>
