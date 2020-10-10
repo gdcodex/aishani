@@ -1,7 +1,7 @@
 import reducer1 from './reducer1';
 import reducer2 from './reducer2';
-import {combineReducers,applyMiddleware} from 'redux';
-import thunk from 'redux-thunk';
+import {combineReducers} from 'redux';
+
 
 
 const rootReducers = combineReducers({
