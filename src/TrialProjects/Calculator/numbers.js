@@ -43,7 +43,7 @@ function Numbers() {
             <div className={( classs===true?"calculator-layout":"night-layout" )}>
                 <div className="title"><h2>Calculator</h2> <img className="night" style={{display:(classs===true?"none":"inline-block")}} onClick={change} src="https://www.flaticon.com/svg/static/icons/svg/1497/1497625.svg" alt=""/> <img src="/images/day.svg" style={{display:(classs===false?"none":"inline-block")}} onClick={change} alt="" className="day"/></div>
                 {/*display of input*/}
-                <div id="show" style={{backgroundColor:(classs===false?"#464141":"#dedede")}} >{number}</div>
+                <div id="show" style={{backgroundColor:(classs===false?"#464141":"rgb(81 93 92)"),color:(classs===true?"rgb(245, 132, 2)":"white")}} >{number}</div>
                 <div className="template">
                 {/*number template*/}
                 <div className="num">
