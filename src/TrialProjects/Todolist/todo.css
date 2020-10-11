@@ -1,3 +1,68 @@
-.MuiButtonBase-root{
-    background-color: rgb(206, 241, 206);
+/* body{
+ background: url("/images/pencil") center;
+
+} */
+.todo-layout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.add-todos{
+    /* border: 1px solid palevioletred; */
+    margin: auto;
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1%;
+    
+}
+.MuiTextField-root{
+  top: -4px;
+  margin-right: 50px;
+
+}
+.add-todos button{
+    transform: translateX(5%);
+}
+.todo-list{
+    width: 370px;
+    margin: auto;
+    position: absolute;
+    top: 20%;
+    
+    
+}
+.item-todo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.my-todo-item{
+    padding-left: 20px;
+}
+.list-btn{
+    width: 22px;
+    height: 30px;
+    border: none;
+    font-size: x-large;
+    position: sticky;
+    background-color: #D24A58;
+    color: lavenderblush;
+}
+.pencil svg{
+    width: 100%;
+    pointer-events: none;
+    position: relative;
+    top: 10%;
+}
+.pencil{
+z-index: -1;
+/* border: 1px solid red; */
+display: flex;
+justify-content: center;
+
 }

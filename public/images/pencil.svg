@@ -1,57 +1,4 @@
-import { Button } from '@material-ui/core';
-import TextField from '@material-ui/core/TextField';
-import Card from '@material-ui/core/Card';
-
-
-
-import React, { useState } from 'react';
-import './todo.css';
-
-
-const App = () => {
-
-    const [todo, settodo] = useState([]);
-    const [list, setlist] = useState([]);
-
-    const add = () => {
-        setlist((prev) => {
-            return [...prev, ...todo]
-        });
-        settodo([]);
-    };
-    const deletee = (e) => {
-        var neww = e.target.value;
-        console.log(neww);
-        setlist(() => {
-            return list.filter(item => item !== neww);
-        })
-    };
-    const arraytodo = [];
-    if (list !== []) {
-        list.forEach((item, i) => arraytodo.push(
-            <><div className="item-todo"><div key={item, "h"} className="my-todo-item" style={{ display: "inline-block" }}>{item}</div><button className="list-btn" onClick={deletee} key={item} value={item}>{"x"}</button ></div></>))
-    }
-
-
-
-    return (
-        <>
-            <div className="todo-layout">
-                <div className="add-todos">
-                    {/* <input type="text" name="todo" value={todo}  onChange={(e)=>{
-                    console.log(e.target.value);
-                    settodo([e.target.value])
-                }}/> */}
-
-
-                    <TextField label="todos" size="small" margin="normal" variant="outlined" name="todo" value={todo} onChange={(e) => {
-                        console.log(e.target.value);
-                        settodo([e.target.value])
-                    }} />
-                    <Button style={{ background: "#D24A58", color: "seashell" }} onClick={add}>Add</Button>
-                </div>
-                <div className="pencil">
-                <svg width="756" height="625" viewBox="0 0 756 625" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="756" height="625" viewBox="0 0 756 625" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Group 2">
 <path id="Vector" d="M94 537.4C93.6133 537.414 93.2277 537.351 92.866 537.213C92.5043 537.076 92.1738 536.867 91.8941 536.6C91.6144 536.332 91.3911 536.012 91.2376 535.656C91.084 535.301 91.0032 534.919 91 534.532V163.4H74C72.346 163.4 71 164.348 71 166V554.53C71.003 554.917 71.0835 555.3 71.237 555.655C71.3904 556.01 71.6136 556.332 71.8934 556.599C72.1731 556.867 72.5037 557.075 72.8655 557.213C73.2274 557.351 73.6131 557.414 74 557.4H338C338.387 557.414 338.772 557.351 339.134 557.213C339.496 557.076 339.826 556.867 340.106 556.6C340.386 556.332 340.609 556.012 340.762 555.656C340.916 555.301 340.997 554.919 341 554.532V537.4H94Z" fill="#DE8AA3"/>
 <g id="Group 1">
@@ -65,14 +12,3 @@ const App = () => {
 <path id="pencil" d="M561.254 55.1931L444.182 337.345C443.837 338.177 443.656 339.068 443.649 339.97C443.633 340.121 443.616 340.273 443.61 340.427L441.749 386.808C441.473 387.823 441.43 388.888 441.624 389.922L439.975 431.05C439.918 432.481 440.302 433.894 441.073 435.1C441.845 436.306 442.968 437.246 444.291 437.794C445.613 438.342 447.072 438.471 448.471 438.164C449.869 437.857 451.139 437.128 452.111 436.077L513.751 369.334C514.572 368.625 515.216 367.735 515.632 366.733L632.704 84.5844L642.298 61.4649C643.769 57.8267 644.503 53.9324 644.457 50.0081C644.41 46.0839 643.585 42.2079 642.027 38.6055C638.276 29.5812 630.537 22.1116 620.794 18.1119L616.703 16.4326C598.16 8.81721 577.588 15.8354 570.849 32.0741L561.254 55.1931ZM506.836 351.398L494.107 336.075L600.773 79.0136L617.082 85.7136L506.836 351.398ZM587.82 73.6959L481.181 330.701L461.292 332.634L571.511 67.0013L587.82 73.6959ZM482.983 344.589L499.348 364.289L474.137 391.588L455.869 384.088L457.354 347.083L482.983 344.589ZM455.271 398.977L464.003 402.562L454.725 412.609L455.271 398.977ZM611.385 29.3853L615.478 31.0648C621.542 33.4096 626.436 38.0503 629.1 43.9804C629.949 45.8804 630.41 47.9306 630.456 50.011C630.503 52.0913 630.134 54.1601 629.372 56.0963L622.444 72.7782L599.637 63.4158L587.591 58.4718L576.881 54.0706L583.778 37.4403C587.569 28.3044 599.953 24.6908 611.385 29.3853Z" fill="#E51A63"/>
 </g>
 </svg>
-
-                </div>
-
-                <Card className="todo-list">
-                    {arraytodo}
-                </Card>
-            </div>
-        </>
-    )
-};
-export default App;
