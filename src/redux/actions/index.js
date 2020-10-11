@@ -1,20 +1,15 @@
-export const change=()=>{
-    return{
-        type:'IN_OUT'
+import * as actions from './actiontypes';
+
+
+export const increase = (py) =>{
+    return {
+        type: actions.INCR_SE,
+        payload:py
     }
 };
-
-
-export const reset = () => {
+export const decrease = (py) =>{
     return {
-        type:'RESET'
-    }
-}
-//while using thunk we can return a function
-
-export const createSomething =(project)=>{
-    return (dispatch,getState)=>{
-        //make async call
-        dispatch({type:'CREATE', project})
+        type: actions.DCR_SE,
+        payload:py
     }
 };
