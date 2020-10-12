@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './redux/myapp/App';
+import App from './firebaseApps/App1/App';
 import { createStore ,applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import rootReducer from './redux/reducer/rootReducer';

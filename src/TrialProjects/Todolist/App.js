@@ -28,7 +28,7 @@ const App = () => {
     };
     const arraytodo = [];
     if (list !== []) {
-        list.forEach((item, i) => arraytodo.push(
+        list.forEach((item) => arraytodo.push(
             <><div className="item-todo"><div key={item + "h"} className="my-todo-item" style={{ display: "inline-block" }}>{item}</div><button className="list-btn" onClick={deletee} key={item} value={item}>{"x"}</button ></div></>))
     }
 
