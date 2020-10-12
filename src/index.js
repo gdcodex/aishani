@@ -1,19 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './redux/myapp/App';
-import { createStore } from 'redux';
+import { createStore ,applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import rootReducer from './redux/reducer/rootReducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
 
 
 
 
 
 //store
-const store = createStore(rootReducer,composeWithDevTools());
+const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(thunk)));
 console.log(store.getState());
-store.subscribe(()=>{console.log("Current State:",store.getState())})
+// store.subscribe(()=>{console.log("Current State:",store.getState())})
 
 
 //rendering the dom

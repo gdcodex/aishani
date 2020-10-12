@@ -1,4 +1,5 @@
 import * as actions from './actiontypes';
+import fetchusers from './fusers';
 
 
 export const increase = (py) =>{
@@ -13,3 +14,4 @@ export const decrease = (py) =>{
         payload:py
     }
 };
+export {fetchusers};
