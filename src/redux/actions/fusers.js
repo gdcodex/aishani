@@ -36,4 +36,28 @@ const fetchUsers = () =>{
         })
     }
 }
+
+ export const renderBuddy=(user)=>{
+    return (dispatch,getState,{getFirebase,getFirestore})=>{
+        //make async call
+        const firestore = getFirestore();
+        firestore.collection('Users').add({
+            ...user,
+            author: 'aisha',
+            authorID: 69,
+            createdAt: new Date()
+        }).then(()=>{
+            dispatch({type: 'CREATE_USER', user})
+        }).catch((err)=>{
+            dispatch({type:"CREATE_USER_ERR", err})
+        })
+        
+    }
+}
+
+
+
 export default fetchUsers;
+
+
+
