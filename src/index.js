@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 import rootReducer from './redux/reducer/rootReducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
-
+//firebase imports
 import {
   reduxFirestore,
   getFirestore,
