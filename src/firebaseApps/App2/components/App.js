@@ -15,11 +15,13 @@ function App() {
         <div>
             <Router>
             <Nav />
-            <Route path="/signup" component={() => <Sup/>} />
-            <Route path="/login" component={() => <Lin/>} />
-            <Route path="/diary" component={() => <Diary/>} />
-            <Route path="/newevent" component={() => <Newevent/>} />
-            <Route path="/eventdetails" component={() => <Edetails/>} />
+            <Switch>
+            <Route path="/signup" exact component={() => <Sup/>} />
+            <Route path="/login" exact component={() => <Lin/>} />
+            <Route path="/" exact component={() => <Diary/>} />
+            <Route path="/newevent" exact component={() => <Newevent/>} />
+            <Route path="/eventdetails" exact component={() => <Edetails/>} />
+            </Switch>
             </Router>
 
         </div>

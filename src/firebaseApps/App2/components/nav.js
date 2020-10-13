@@ -27,7 +27,7 @@ function Nav() {
             <div className="m-nav"><img src="/images/mobileham.svg" alt="menu" onClick={open} /></div>
             <ul className="nav-ul" id="ull">
                 <li className="nav-li" id="nali0">
-                    <NavLink to='/diary' activeClassName="diary-link" style={{ 'textDecoration': 'none' }}>My diary</NavLink>
+                    <NavLink to='/' exact activeClassName="diary-link" style={{ 'textDecoration': 'none' }}>My diary</NavLink>
                 </li>
                 <li className="nav-li" id="nali1">
                     <NavLink to='/newevent' activeClassName="diary-link" style={{ 'textDecoration': 'none' }}>New Event</NavLink>
