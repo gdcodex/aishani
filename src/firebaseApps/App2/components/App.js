@@ -6,6 +6,7 @@ import Edetails from './eventdetails'
 import Sup from './signup'
 import Lin from './login'
 
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 
