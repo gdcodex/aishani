@@ -1,22 +1,73 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../css/newevent.css'
 import Tooltip from '@material-ui/core/Tooltip';
 
-function Newevent() {
+import { connect } from 'react-redux'
+import { firestoreConnect } from 'react-redux-firebase'
+import { compose } from 'redux'
+import { createevent } from '../redux/actions'
+
+function Newevent(props) {
+
+
+    const [event, setevent] = useState({
+        title: "",
+        description: ""
+    })
+    const inputevent = (e) => {
+        const { value, name } = e.target
+        setevent((prev) => {
+            return {
+                ...prev,
+                [name]: value
+            }
+        })
+    }
+
     return (
         <div className="new-event">
             <h3>Add life event</h3>
-            <form action="" className="event-form">
-            <h5 className="form-title">Title</h5>
-            <input id="input-t" type="text"/>
-            <h5 className="form-description">Event Description</h5>
-            <input type="text"/>
-            <Tooltip title="Add your event">
-            <button type="submit">Add</button>
-            </Tooltip>
+
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                setevent(() => {
+                    return {
+                        title: "",
+                        description: ""
+                    }
+                })
+                props.createevent(event)
+
+            }} className="event-form">
+
+                <h5 className="form-title">Title</h5>
+                <input id="input-t" type="text" name="title" value={event.title} onChange={inputevent} />
+
+                <h5 className="form-description">Event Description</h5>
+                <input type="text" name="description" value={event.description} onChange={inputevent} />
+                <Tooltip title="Add your event">
+                    <button type="submit">Add</button>
+                </Tooltip>
+
             </form>
         </div>
     )
 }
+const mapStateToProps = (state) => {
+    console.log(state);
+    return {
 
-export default Newevent
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        createevent: (event) => dispatch(createevent(event))
+    }
+}
+
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    firestoreConnect([
+        { collection: "Diary" }
+    ])
+)(Newevent)
