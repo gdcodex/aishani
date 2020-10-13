@@ -2,6 +2,7 @@ import React from 'react'
 import Card from '@material-ui/core/Card'
 import '../css/diary.css'
 
+
 function Diary() {
     const array = [1,2,3,4,2,2,2]
     return (

@@ -1,5 +1,6 @@
 import React from 'react'
 import '../css/newevent.css'
+import Tooltip from '@material-ui/core/Tooltip';
 
 function Newevent() {
     return (
@@ -10,7 +11,9 @@ function Newevent() {
             <input id="input-t" type="text"/>
             <h5 className="form-description">Event Description</h5>
             <input type="text"/>
+            <Tooltip title="Add your event">
             <button type="submit">Add</button>
+            </Tooltip>
             </form>
         </div>
     )

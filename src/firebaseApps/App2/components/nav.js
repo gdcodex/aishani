@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Tooltip from '@material-ui/core/Tooltip';
 import '../css/navigation.css'
 
 function Nav() {
@@ -42,9 +43,11 @@ function Nav() {
                 </li>
 
                 <li className="nav-li" id="nali4">
+                <Tooltip title="Account settings">
                     <NavLink to='/accounts' activeClassName="diary-link" style={{ 'textDecoration': 'none' }}>
                         {/* <img src="#" alt="ac" className="user-ac-icon" /> */}A
                     </NavLink>
+                    </Tooltip>
                 </li>
             </ul>
         </div>
