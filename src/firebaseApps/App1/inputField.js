@@ -35,12 +35,17 @@ const Input = (props) => {
                 })
                 props.renderBuddy(user)
             }}>Save</button>
+            <div style={{display:"inline-block"}} className="name-section">
+             <h2>Our People:</h2> 
             
             {
                 props.ouruser && props.ouruser.map((e, i) =>
-                    <p key={e + i}>{e.name}</p>
+                   <>
+                   <p key={e + i}>{e.name}</p>
+                   </>
                 )
             }
+            </div>
         </>
     )
 }
