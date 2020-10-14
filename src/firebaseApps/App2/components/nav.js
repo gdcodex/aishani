@@ -2,8 +2,10 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Tooltip from '@material-ui/core/Tooltip';
 import '../css/navigation.css'
+import {connect} from 'react-redux'
+import {signout} from '../redux/actions/authaction'
 
-function Nav() {
+function Nav(props) {
     const open = () => {
         document.getElementById("ull").classList.toggle('open')
        
@@ -13,7 +15,8 @@ function Nav() {
             })
      
         }
-
+    
+    console.log(props.authstatus)
 
     return (
         <div className="navigation-bar">
@@ -27,24 +30,29 @@ function Nav() {
             {/*right*/}
             <div className="m-nav"><img src="/images/mobileham.svg" alt="menu" onClick={open} /></div>
             <ul className="nav-ul" id="ull">
+            { props.authstatus.uid?
+            <>
                 <li className="nav-li" id="nali0">
-                    <NavLink to='/' exact activeClassName="diary-link" style={{ 'textDecoration': 'none' }}>My diary</NavLink>
+                    <NavLink to='/' exact activeClassName="diary-link" onClick={open} style={{ 'textDecoration': 'none' }}>My diary</NavLink>
                 </li>
                 <li className="nav-li" id="nali1">
-                    <NavLink to='/newevent' activeClassName="diary-link" style={{ 'textDecoration': 'none' }}>New Event</NavLink>
+                    <NavLink to='/newevent' activeClassName="diary-link" onClick={open} style={{ 'textDecoration': 'none' }}>New Event</NavLink>
                 </li>
-                {/* 
+                <li className="nav-li" id="nali3">
+                    <NavLink to='/login' activeClassName="diary-link" onClick={open,props.signOut} style={{ 'textDecoration': 'none' }}>Logout</NavLink>
+                </li>
+                </>
+                :
                 <li className="nav-li" id="nali2">
                     <NavLink to='/login' activeClassName="diary-link" style={{ 'textDecoration': 'none' }}>Login</NavLink>
-                </li> */}
-
-                <li className="nav-li" id="nali3">
-                    <NavLink to='/login' activeClassName="diary-link" style={{ 'textDecoration': 'none' }}>Logout</NavLink>
                 </li>
+            }
+            
+
 
                 <li className="nav-li" id="nali4">
                 <Tooltip title="Account settings">
-                    <NavLink to='/accounts' activeClassName="diary-link" style={{ 'textDecoration': 'none' }}>
+                    <NavLink to='/accounts' activeClassName="diary-link" onClick={open} style={{ 'textDecoration': 'none' }}>
                         {/* <img src="#" alt="ac" className="user-ac-icon" /> */}A
                     </NavLink>
                     </Tooltip>
@@ -53,5 +61,16 @@ function Nav() {
         </div>
     )
 }
+const mapStateToProps = (state)=>{
+   
+    return{
+        authstatus :state.firebase.auth
+    }
+}
+const mapDispatchToProps =(dispatch)=>{
+    return{
+        signOut: ()=>dispatch(signout())
+    }
+}
 
-export default Nav
+export default connect(mapStateToProps,mapDispatchToProps)(Nav)

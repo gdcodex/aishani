@@ -1,0 +1,14 @@
+.log-in{
+    transform: translateY(200px);
+    width: 50%;
+    margin: auto;
+    
+}
+.in{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.in input{
+    display:block;
+}
