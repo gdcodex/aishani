@@ -9,14 +9,20 @@ function Nav(props) {
     const open = () => {
         document.getElementById("ull").classList.toggle('open')
        
-        const array= [0,1,3,4]
-        array.map((e)=>{
+        const arrayin= [0,1,3,4]
+        const arrayout=[2,5,4]
+        if(props.authstatus.uid)
+        arrayin.map((e)=>{
              document.getElementById(`nali${e}`).classList.toggle('lii')
             })
+        else arrayout.map((e)=>{
+            document.getElementById(`nali${e}`).classList.toggle('lii')
+           })
      
         }
     
-    console.log(props.authstatus)
+   
+    
 
     return (
         <div className="navigation-bar">
@@ -43,9 +49,14 @@ function Nav(props) {
                 </li>
                 </>
                 :
+                <>
                 <li className="nav-li" id="nali2">
                     <NavLink to='/login' activeClassName="diary-link" style={{ 'textDecoration': 'none' }}>Login</NavLink>
                 </li>
+                <li className="nav-li" id="nali5">
+                    <NavLink to='/signup' activeClassName="diary-link" style={{ 'textDecoration': 'none' }}>Signup</NavLink>
+                </li>
+                </>
             }
             
 
@@ -53,7 +64,7 @@ function Nav(props) {
                 <li className="nav-li" id="nali4">
                 <Tooltip title="Account settings">
                     <NavLink to='/accounts' activeClassName="diary-link" onClick={open} style={{ 'textDecoration': 'none' }}>
-                        {/* <img src="#" alt="ac" className="user-ac-icon" /> */}A
+                        {/* <img src="#" alt="ac" className="user-ac-icon" /> */}{props.initials.initials}
                     </NavLink>
                     </Tooltip>
                 </li>
@@ -64,7 +75,8 @@ function Nav(props) {
 const mapStateToProps = (state)=>{
    
     return{
-        authstatus :state.firebase.auth
+        authstatus :state.firebase.auth,
+        initials:state.firebase.profile
     }
 }
 const mapDispatchToProps =(dispatch)=>{

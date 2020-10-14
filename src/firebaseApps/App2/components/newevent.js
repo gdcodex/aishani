@@ -6,6 +6,8 @@ import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { createevent } from '../redux/actions'
+import {Redirect } from 'react-router-dom'
+
 
 function Newevent(props) {
 
@@ -23,7 +25,8 @@ function Newevent(props) {
             }
         })
     }
-
+ 
+   
     return (
         <div className="new-event">
             <h3>Add life event</h3>
@@ -56,7 +59,7 @@ function Newevent(props) {
 const mapStateToProps = (state) => {
     console.log(state);
     return {
-
+        authstatus :state.firebase.auth
     }
 }
 const mapDispatchToProps = (dispatch) => {

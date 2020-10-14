@@ -27,25 +27,47 @@ import { isLoaded  } from 'react-redux-firebase';
 const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),  reduxFirestore(firebase, fbConfig)));
 
 
+
+
+
+
+
+
+const config = {
+  userProfile: 'user', // where profiles are stored in database,
+  useFirestoreForProfile: true
+};
+
+
 const rrfProps = {
   firebase,
-  config: fbConfig,
+  config,
   dispatch: store.dispatch,
-  createFirestoreInstance,
-  userProfile: 'users', // where profiles are stored in database
-  presence: 'presence', // where list of online users is stored in database
-  sessions: 'sessions'
+  createFirestoreInstance
 };
+
+// const rrfProps = {
+//   firebase,
+//   config: fbConfig,
+//   dispatch: store.dispatch,
+//   createFirestoreInstance,
+//   userProfile: 'users',
+//   useFirestoreForProfile: true,
+//   enableRedirectHandling: false,
+//   resetBeforeLogin: false, // where profiles are stored in database
+//   presence: 'presence', // where list of online users is stored in database
+//   sessions: 'sessions'
+// };
 
 function AuthIsLoaded({ children }) {
   const auth = useSelector(state => state.firebase.auth)
-  if (!isLoaded(auth)) return <div>Loading Screen...</div>;
+  if (!isLoaded(auth)) return <div>loading your life diary...📓</div>;
       return children
 }
 
 
-console.log(store.getState());
-// store.subscribe(()=>{console.log("Current State:",store.getState())})
+
+store.subscribe(()=>{console.log("Current State:",store.getState())})
 
 
 //rendering the dom
