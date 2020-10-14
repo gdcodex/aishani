@@ -10,7 +10,7 @@ function Nav(props) {
         document.getElementById("ull").classList.toggle('open')
        
         const arrayin= [0,1,3,4]
-        const arrayout=[2,5,4]
+        const arrayout=[2,5]
         if(props.authstatus.uid)
         arrayin.map((e)=>{
              document.getElementById(`nali${e}`).classList.toggle('lii')
@@ -47,6 +47,13 @@ function Nav(props) {
                 <li className="nav-li" id="nali3">
                     <NavLink to='/login' activeClassName="diary-link" onClick={open,props.signOut} style={{ 'textDecoration': 'none' }}>Logout</NavLink>
                 </li>
+                <li className="nav-li" id="nali4">
+                <Tooltip title="Account settings">
+                    <NavLink to='/accounts' activeClassName="diary-link" onClick={open} style={{ 'textDecoration': 'none' }}>
+                        {/* <img src="#" alt="ac" className="user-ac-icon" /> */}{props.initials.initials}
+                    </NavLink>
+                    </Tooltip>
+                </li>
                 </>
                 :
                 <>
@@ -61,13 +68,7 @@ function Nav(props) {
             
 
 
-                <li className="nav-li" id="nali4">
-                <Tooltip title="Account settings">
-                    <NavLink to='/accounts' activeClassName="diary-link" onClick={open} style={{ 'textDecoration': 'none' }}>
-                        {/* <img src="#" alt="ac" className="user-ac-icon" /> */}{props.initials.initials}
-                    </NavLink>
-                    </Tooltip>
-                </li>
+               
             </ul>
         </div>
     )

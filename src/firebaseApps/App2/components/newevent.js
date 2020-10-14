@@ -25,7 +25,7 @@ function Newevent(props) {
             }
         })
     }
- 
+    if(!props.authstatus.uid) return <Redirect to='/login'/>
    
     return (
         <div className="new-event">

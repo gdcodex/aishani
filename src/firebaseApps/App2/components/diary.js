@@ -4,9 +4,12 @@ import '../css/diary.css'
 import {compose} from 'redux'
 import {connect} from 'react-redux'
 import {firestoreConnect} from 'react-redux-firebase'
+import moment from 'moment'
+import {Redirect } from 'react-router-dom'
 
 function Diary(props) {
     const array = [1,2,3,4,2,2,2]
+    if(!props.authstatus.uid) return <Redirect to='/login'/>
     return (
         <div>
         {props.Event && props.Event.map((e,i)=>
@@ -14,6 +17,7 @@ function Diary(props) {
             <Card style={{background:"#FF8080",color:"seashell",padding:"10px"}}>
             <h3 style={{color:"rgb(56, 55, 54)"}}>{e.title}</h3>
             <p className="diary-parah">{e.description}</p>
+            <p className="created-by">{moment(e.createdAt.toDate()).calendar()}, by {e.firstname} </p>
         </Card>
         </div>
         )}
@@ -23,7 +27,8 @@ function Diary(props) {
 
 const mapStateToProps = (state)=>{
     return{
-        Event: state.firestore.ordered.Diary
+        Event: state.firestore.ordered.Diary,
+        authstatus :state.firebase.auth
     }
 }
 

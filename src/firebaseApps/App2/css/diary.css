@@ -10,5 +10,10 @@
     margin-top: 120px;
 }
 .diary-parah{
+    font-size: small;
+}
+.created-by{
+    
     font-size: x-small;
+    color: rgb(114, 106, 106);
 }
