@@ -57,7 +57,6 @@ function Newevent(props) {
     )
 }
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         authstatus :state.firebase.auth
     }

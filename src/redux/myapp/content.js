@@ -5,8 +5,10 @@ import {increase,decrease,fetchusers} from '../actions';
 const Content =(props) => {
     const array = props.data.user.map((e,i)=><h3 key={e+i}>{e.name}</h3>)
     useEffect(()=>{
-    console.log('userData:',props.data.user.map(e=>e.name))
-    },[props.data])
+    // console.log('userData:',props.data.user.map(e=>e.name))
+   return props.fetchUsers()
+    },[])
+   
     return (
         <div>
             <h2>The value :{props.value} </h2>

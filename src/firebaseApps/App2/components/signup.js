@@ -4,6 +4,9 @@ import {connect} from 'react-redux'
 import {signup} from '../redux/actions/authaction'
 import '../css/login.css'
 import {Redirect } from 'react-router-dom'
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';
 
 function Sup(props) {
 
@@ -35,11 +38,15 @@ function Sup(props) {
                 props.signup(newUser)
                 history.push("/");
             }} className="in">
-               <input type="text" name="firstname" value={newUser.firstname} onChange={change}  placeholder="Enter your firstname"/>
-               <input type="text" name="lastname" value={newUser.lastname} onChange={change}  placeholder="Enter your lastname"/>
-               <input type="email" name="email" value={newUser.email} onChange={change}  placeholder="Enter your email"/>
-               <input type="password" name="password" value={newUser.password} onChange={change} placeholder="Enter your password"/>
-               <button type="submit">Signup</button>
+               <TextField id="filled-secondary" size="small" color="secondary" style={{marginBottom:"10px"}} label="Firstname" variant="outlined" type="text" name="firstname" value={newUser.firstname} onChange={change}  placeholder="Enter your firstname"/>
+               <TextField id="filled-secondary" size="small" color="secondary" style={{marginBottom:"10px"}} label="Lastname" variant="outlined" type="text" name="lastname" value={newUser.lastname} onChange={change}  placeholder="Enter your lastname"/>
+               <TextField id="filled-secondary" size="small" color="secondary" style={{marginBottom:"10px"}} label="Email" variant="outlined" type="email" name="email" value={newUser.email} onChange={change}  placeholder="Enter your email"/>
+               <TextField id="filled-secondary" size="small" color="secondary" style={{marginBottom:"10px"}} label="Password" variant="outlined" type="password" name="password" value={newUser.password} onChange={change} placeholder="Enter your password"/>
+               <Tooltip title=" You will be directly logged in">
+                 <Button variant="outlined" size="small" color="secondary" type="submit">
+              Signup
+                 </Button>
+                 </Tooltip>
             </form>
                {props.authError && <p>{props.authError}</p>}
         </div>   

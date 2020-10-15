@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { NavLink } from 'react-router-dom'
 import Tooltip from '@material-ui/core/Tooltip';
 import '../css/navigation.css'
@@ -10,7 +10,7 @@ function Nav(props) {
         document.getElementById("ull").classList.toggle('open')
        
         const arrayin= [0,1,3,4]
-        const arrayout=[2,5]
+        const arrayout=[2,5,6]
         if(props.authstatus.uid)
         arrayin.map((e)=>{
              document.getElementById(`nali${e}`).classList.toggle('lii')
@@ -20,17 +20,25 @@ function Nav(props) {
            })
      
         }
-    
-   
-    
+        const li =[0,1,3,4]
+    const [navbar, setnavbar] = useState(false);
+    const navbackground =()=>{
+       if( window.scrollY>=80) {
+           setnavbar(true)
+           li.map((e)=>{document.getElementById(`nali${e}`).classList.toggle("colored-li")}
+           )
+        }
+       else setnavbar(false)
+    }
+    // window.addEventListener("scroll",navbackground);
 
     return (
-        <div className="navigation-bar">
+        <div className={navbar?"colored-nav":"navigation-bar"}>
             {/*left */}
             <div className="navigation-left">
                 <div className="feather">
                     <img src="/images/feather.svg" alt="logo" />
-                    <h2 className="title">Diary</h2>
+                    <h2 className="title" style={{color:(navbar?"rgb(241,231,231)":"rgb(48, 44, 44)")}}>Diary</h2>
                 </div>
             </div>
             {/*right*/}
@@ -38,16 +46,16 @@ function Nav(props) {
             <ul className="nav-ul" id="ull">
             { props.authstatus.uid?
             <>
-                <li className="nav-li" id="nali0">
+                <li className={navbar?"colored-li":"nav-li"} id="nali0">
                     <NavLink to='/' exact activeClassName="diary-link" onClick={open} style={{ 'textDecoration': 'none' }}>My diary</NavLink>
                 </li>
-                <li className="nav-li" id="nali1">
+                <li className={navbar?"colored-li":"nav-li"}  id="nali1">
                     <NavLink to='/newevent' activeClassName="diary-link" onClick={open} style={{ 'textDecoration': 'none' }}>New Event</NavLink>
                 </li>
-                <li className="nav-li" id="nali3">
+                <li className={navbar?"colored-li":"nav-li"}  id="nali3">
                     <NavLink to='/login' activeClassName="diary-link" onClick={open,props.signOut} style={{ 'textDecoration': 'none' }}>Logout</NavLink>
                 </li>
-                <li className="nav-li" id="nali4">
+                <li className={navbar?"colored-li":"nav-li"}  id="nali4">
                 <Tooltip title="Account settings">
                     <NavLink to='/accounts' activeClassName="diary-link" onClick={open} style={{ 'textDecoration': 'none' }}>
                         {/* <img src="#" alt="ac" className="user-ac-icon" /> */}{props.initials.initials}
@@ -57,11 +65,14 @@ function Nav(props) {
                 </>
                 :
                 <>
-                <li className="nav-li" id="nali2">
-                    <NavLink to='/login' activeClassName="diary-link" style={{ 'textDecoration': 'none' }}>Login</NavLink>
+                <li className={navbar?"colored-li":"nav-li"}  id="nali2">
+                    <NavLink to='/login' activeClassName="diary-link"  onClick={open}  style={{ 'textDecoration': 'none' }}>Login</NavLink>
                 </li>
                 <li className="nav-li" id="nali5">
-                    <NavLink to='/signup' activeClassName="diary-link" style={{ 'textDecoration': 'none' }}>Signup</NavLink>
+                    <NavLink to='/signup' activeClassName="diary-link"  onClick={open}  style={{ 'textDecoration': 'none' }}>Signup</NavLink>
+                </li>
+                <li className="nav-li" id="nali6">
+                    <NavLink to='/help' activeClassName="diary-link"  onClick={open}  style={{ 'textDecoration': 'none' }}>Help</NavLink>
                 </li>
                 </>
             }

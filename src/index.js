@@ -46,18 +46,7 @@ const rrfProps = {
   createFirestoreInstance
 };
 
-// const rrfProps = {
-//   firebase,
-//   config: fbConfig,
-//   dispatch: store.dispatch,
-//   createFirestoreInstance,
-//   userProfile: 'users',
-//   useFirestoreForProfile: true,
-//   enableRedirectHandling: false,
-//   resetBeforeLogin: false, // where profiles are stored in database
-//   presence: 'presence', // where list of online users is stored in database
-//   sessions: 'sessions'
-// };
+
 
 function AuthIsLoaded({ children }) {
   const auth = useSelector(state => state.firebase.auth)
@@ -70,12 +59,21 @@ function AuthIsLoaded({ children }) {
 store.subscribe(()=>{console.log("Current State:",store.getState())})
 
 
-//rendering the dom
+// rendering the dom with firebase
 ReactDOM.render(
 
    <Provider store={store}>  <ReactReduxFirebaseProvider {...rrfProps}><AuthIsLoaded> <App /> </AuthIsLoaded>  </ReactReduxFirebaseProvider> </Provider>,
   document.getElementById('root')
 );
+
+
+
+//without firebase
+// ReactDOM.render(
+
+//    <Provider store={store}>  <ReactReduxFirebaseProvider {...rrfProps}> <App /> </ReactReduxFirebaseProvider> </Provider>,
+//   document.getElementById('root')
+// );
 
 
 

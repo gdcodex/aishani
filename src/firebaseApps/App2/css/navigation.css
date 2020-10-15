@@ -16,12 +16,26 @@ body{
     /* border: 1px solid hotpink; */
     justify-content: space-between;
     padding-top: 10px;
+    padding-bottom: 30px;
     position: fixed;
     top: 0;
     z-index: 11;
     background: #fdfdfd ;
-   
-
+}
+.colored-nav{
+    font-family: 'Righteous', cursive;
+    display: flex;
+    width: 100vw;
+    /* border: 1px solid hotpink; */
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+    transition: background 1s ease;
+    background: #655959 ;
+    
 }
 .navigation-left{
     width: 20%;
@@ -64,6 +78,10 @@ color: rgb(48, 44, 44);
     color: rgb(85, 80, 80);
     
 }
+.colored-li a{
+    text-decoration: none;
+    color: rgb(241,231,231);
+}
 .diary-link{
     border-bottom:2px solid #FF8080;
     transition: 0.5s border-bottom ease;
@@ -74,6 +92,7 @@ color: rgb(48, 44, 44);
 .m-nav{
     display: none;
 }
+
 /*media*/
 @media only screen and (max-width: 550px) {
     .navigation-left{

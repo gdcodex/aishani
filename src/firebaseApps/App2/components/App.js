@@ -5,6 +5,7 @@ import Newevent from './newevent'
 import Edetails from './eventdetails'
 import Sup from './signup'
 import Lin from './login'
+import Foot from './foot'
 import {connect} from 'react-redux'
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
@@ -26,6 +27,7 @@ function App() {
             <Route path="/login" exact component={() => <Lin/>} />
 
             </Switch>
+            <Foot/>
             </Router>
 
         </div>
