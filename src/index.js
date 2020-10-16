@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './firebaseApps/App2/components/App';
+// import App from './firebaseApps/App2/components/App';
+import App from './TrialProjects/Todolist/App'
 import { createStore ,applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import rootReducer from './firebaseApps/App2/redux/reducers/rootreducer';
@@ -48,11 +49,11 @@ const rrfProps = {
 
 
 
-function AuthIsLoaded({ children }) {
-  const auth = useSelector(state => state.firebase.auth)
-  if (!isLoaded(auth)) return <div>loading your life diary...📓</div>;
-      return children
-}
+// function AuthIsLoaded({ children }) {
+//   const auth = useSelector(state => state.firebase.auth)
+//   if (!isLoaded(auth)) return <div>loading your life diary...📓</div>;
+//       return children
+// }
 
 
 
@@ -60,20 +61,20 @@ store.subscribe(()=>{console.log("Current State:",store.getState())})
 
 
 // rendering the dom with firebase
-ReactDOM.render(
+// ReactDOM.render(
 
-   <Provider store={store}>  <ReactReduxFirebaseProvider {...rrfProps}><AuthIsLoaded> <App /> </AuthIsLoaded>  </ReactReduxFirebaseProvider> </Provider>,
-  document.getElementById('root')
-);
+//    <Provider store={store}>  <ReactReduxFirebaseProvider {...rrfProps}><AuthIsLoaded> <App /> </AuthIsLoaded>  </ReactReduxFirebaseProvider> </Provider>,
+//   document.getElementById('root')
+// );
 
 
 
 //without firebase
-// ReactDOM.render(
+ReactDOM.render(
 
-//    <Provider store={store}>  <ReactReduxFirebaseProvider {...rrfProps}> <App /> </ReactReduxFirebaseProvider> </Provider>,
-//   document.getElementById('root')
-// );
+   <Provider store={store}>  <ReactReduxFirebaseProvider {...rrfProps}> <App /> </ReactReduxFirebaseProvider> </Provider>,
+  document.getElementById('root')
+);
 
 
 

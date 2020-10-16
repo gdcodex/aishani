@@ -2,6 +2,7 @@
  background: url("/images/pencil") center;
 
 } */
+body{overflow-x: hidden;}
 .todo-layout{
     display: flex;
     justify-content: center;
@@ -28,22 +29,37 @@
     transform: translateX(5%);
 }
 .todo-list{
-    width: 370px;
+    width: 40vw;
     margin: auto;
     position: absolute;
-    top: 20%;
-    
-    
+    top: 20%;     
 }
+
+
+
 .item-todo{
     display: flex;
     justify-content: space-between;
     align-items: center;
-   
 }
+
 .my-todo-item{
     padding-left: 20px;
+    outline: none;
+    border: none;
+    width: 90%;
+   
 }
+.card{
+    border-radius: 6px;
+    background-color: white;
+    -webkit-box-shadow: 1px 2px 4px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 1px 2px 4px 0px rgba(0,0,0,1);
+    box-shadow: 1px 2px 4px 0px rgba(0,0,0,1);
+    margin-bottom: 10px;
+}
+
+
 .list-btn{
     width: 22px;
     height: 30px;
@@ -51,7 +67,13 @@
     font-size: x-large;
     position: sticky;
     background-color: #D24A58;
+    background-image: linear-gradient(120deg, #ec6969 0%, #D24A58 100%);
     color: lavenderblush;
+    align-self: center;
+    border-radius: 6px;
+}
+.list-btn:hover{
+    transform: none;
 }
 .pencil svg{
     width: 100%;
@@ -65,4 +87,54 @@ z-index: -1;
 display: flex;
 justify-content: center;
 
+}
+.details{
+    width: 30%;
+    height: auto;
+    position: absolute;
+    top: 15px;
+    padding: 20px;
+    left: 35%;
+    z-index: 100;
+    background-color: #D24A58;
+    background-image: linear-gradient(120deg, #ec6969 0%, #D24A58 100%);
+    color: seashell;
+    border-radius: 10px;
+    display: none;
+ -webkit-animation: scale-in-ver-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-in-ver-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    
+}
+
+ @-webkit-keyframes scale-in-ver-center {
+    0% {
+      -webkit-transform: scaleY(0);
+              transform: scaleY(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+      opacity: 1;
+    }
+  }
+  @keyframes scale-in-ver-center {
+    0% {
+      -webkit-transform: scaleY(0);
+              transform: scaleY(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+      opacity: 1;
+    }
+  }
+  
+
+
+@media only screen and (max-width: 1200px) {
+    .todo-list{
+        width: 80vw;
+    }
 }
