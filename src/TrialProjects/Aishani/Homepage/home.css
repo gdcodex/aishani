@@ -50,6 +50,7 @@ svg{
    
     position: relative;
     background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    background: linear-gradient(to right, #7b747c, #7b747c);
 }
 
 
@@ -74,10 +75,7 @@ svg{
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background: #BE93C5;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #7BC6CC, #BE93C5);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #7BC6CC, #BE93C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        
+    background: linear-gradient(to right, #7b747c, #7b747c);   
     animation: landing 2s ease ;
     animation-delay: 4s;
     animation-fill-mode: forwards;
@@ -100,7 +98,8 @@ svg{
 .aish{
     opacity: 0;
     position: relative;
-    animation: opac 4s ease ;
+    -webkit-animation: opac 4s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: opac 4s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     animation-fill-mode: forwards;
     font-size: 80px;
     z-index: 10;
@@ -108,19 +107,23 @@ svg{
 
 @keyframes opac{
     0%{
-        opacity: none;
-        top: -60px;
+
+        top: 0px;
         color: white;
+        letter-spacing: 1em;
+        opacity: 0;
        
        
     }
-    75%{
-        color: white;
+    40%{
+        opacity: 0.6;
     }
     100%{
-        opacity: 1;
+        
         top: 60px;
         color: white;
+        letter-spacing: normal;
+        opacity: 1;
 
        
     }
@@ -139,12 +142,12 @@ span{
        
     }
     75%{
-        color: white;
+        color: #b7b7e0;
     }
     to{
         opacity: 1;
        
-        color: rgb(165, 93, 129);
+        color: #b7b7e0;
 
        
     }
@@ -155,7 +158,7 @@ span{
     left: 1%;
     font-size: 8px;
     padding: 10px 40px;
-    background-color: rgb(104, 72, 50);
+    background-color: #b7b7e0;
     color: rgba(255, 255, 255);
     border-radius: 30px;
     cursor: pointer;
@@ -166,7 +169,7 @@ span{
     0%{
         
         font-size: 3px;
-        background-color: thistle;
+        background-color: #535461;
     }
     30%{
           font-size: 3px;

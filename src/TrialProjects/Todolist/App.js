@@ -1,6 +1,6 @@
 import { Button } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
-import Card from '@material-ui/core/Card';
+
 
 
 
@@ -78,7 +78,7 @@ const App = () => {
                 }}/> */}
 
 
-                    <TextField label="todos" size="small" margin="normal" variant="outlined" name="todo" value={todo} onChange={(e) => {
+                    <TextField label="todos" size="small" margin="normal" color='secondary' id="outlined-secondary" variant="outlined" name="todo" value={todo} onChange={(e) => {
                         console.log(e.target.value);
                         settodo([e.target.value])
                     }} />
