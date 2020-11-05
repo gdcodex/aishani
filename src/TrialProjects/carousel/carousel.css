@@ -2,97 +2,91 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 body{
     overflow-x: hidden;
 }
 .carousel-container{
+    margin: auto;
     transform: translateY(50px);
+    width: 600px;
+    
 }
 .carousel-slider{
     display: flex;
-    width: 600vw;
     height: 500px;
-    transform: translateX(-100vw);
-    flex-wrap: wrap;
-    overflow: hidden;
-    animation: carousel 12s linear 0s infinite ;
+    overflow-x: hidden;
+    /* scroll-snap-type: x mandatory; */
+    
     
 }
-.one{
-    animation-delay: 0s;
-}
-.two{
-    animation-delay: -3s;
-}
-.three{
-    animation-delay: -6s;
-}
-.four{
-    animation-delay: -9s;
-}
-.carousel-slider:hover{
+
+.carousel-image:hover{
     animation-play-state: paused;
     cursor: pointer;
 }
 @keyframes carousel {
     0%{
-        transform: translateX(-100vw);
+        transform: translateX(-600px);
     }
     22%{
-        transform: translateX(-100vw);
+        transform: translateX(-600px);
     }
     25%{
-        transform: translateX(-200vw);
+        transform: translateX(-1200px);
     }
     47%{
-        transform: translateX(-200vw);
+        transform: translateX(-1200px);
     }
     50%{
-        transform: translateX(-300vw);
+        transform: translateX(-1800px);
     }
-    72%{
-        transform: translateX(-300vw);
+    68%{
+        transform: translateX(-1800px);
     }
     75%{
-        transform: translateX(-400vw);
-    }
-    75.0001%{
-        transform: translateX(0vw);
+        transform: translateX(0px);
     }
     97%{
-        transform: translateX(0vw);
+        transform: translateX(0px);
     }
     100%{
-        transform: translateX(-100vw);
+        transform: translateX(-600px);
     }
 }
 .carousel-image{
-    width: 100vw;
+    display: inline-flex;
+    width: 600px;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s;
+    /* animation: carousel 12s linear 0s infinite; */
 }
 
 .indicator{
     display: flex;
     width: 50vw;
     padding: 40px;
-    margin: auto;
     align-items: center;
     justify-content: space-evenly;
+    transform: translateY(50px);
+    margin: auto;
 
 }
-.indicator span {
+.indicator a {
     cursor: pointer;
     border: 1px solid palevioletred;
-    width: 50px;
-    height: 50px;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    color:rgb(70, 66, 66) ;
 }
-.indicator span:hover {
+.indicator a:hover {
    background-color: rgb(70, 66, 66);
    color: honeydew;
 }
