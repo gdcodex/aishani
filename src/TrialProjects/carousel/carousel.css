@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
+.carousel-container{
+    transform: translateY(50px);
+}
+.carousel-slider{
+    display: flex;
+    width: 600vw;
+    height: 500px;
+    transform: translateX(-100vw);
+    flex-wrap: wrap;
+    overflow: hidden;
+    animation: carousel 12s linear 0s infinite ;
+    
+}
+.one{
+    animation-delay: 0s;
+}
+.two{
+    animation-delay: -3s;
+}
+.three{
+    animation-delay: -6s;
+}
+.four{
+    animation-delay: -9s;
+}
+.carousel-slider:hover{
+    animation-play-state: paused;
+    cursor: pointer;
+}
+@keyframes carousel {
+    0%{
+        transform: translateX(-100vw);
+    }
+    22%{
+        transform: translateX(-100vw);
+    }
+    25%{
+        transform: translateX(-200vw);
+    }
+    47%{
+        transform: translateX(-200vw);
+    }
+    50%{
+        transform: translateX(-300vw);
+    }
+    72%{
+        transform: translateX(-300vw);
+    }
+    75%{
+        transform: translateX(-400vw);
+    }
+    75.0001%{
+        transform: translateX(0vw);
+    }
+    97%{
+        transform: translateX(0vw);
+    }
+    100%{
+        transform: translateX(-100vw);
+    }
+}
+.carousel-image{
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+.indicator{
+    display: flex;
+    width: 50vw;
+    padding: 40px;
+    margin: auto;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.indicator span {
+    cursor: pointer;
+    border: 1px solid palevioletred;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.indicator span:hover {
+   background-color: rgb(70, 66, 66);
+   color: honeydew;
+}

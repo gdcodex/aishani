@@ -1,26 +1,47 @@
-import React from 'react'
+import React from "react";
 
-import './carousel.css'
+import "./carousel.css";
 
-const Carousel = ()=>{
-    return(
-        <>
-            <section className="carousel-container">
-                <div className="carousel-slider">
-                    <div key="c-1" className="carousel-image" id="pic1"></div>
-                    <div key="c-2" className="carousel-image" id="pic2"></div>
-                    <div key="c-3" className="carousel-image" id="pic3"></div>
-                    <div key="c-4" className="carousel-image" id="pic4"></div>
-                    <div key="c-5" className="carousel-image" id="pic5"></div>
-                    <div key="c-6" className="carousel-image" id="pic6"></div>
-                </div>
-                <div className="indicator">
-                    <a href=""></a>
-                    <a href=""></a>
-                    <a href=""></a>
-                </div>
-            </section>
-        </>
-    )
-}
+const Carousel = () => {
+  const Irray = [
+    "https://cdn.pixabay.com/photo/2020/05/24/06/54/dumbo-5212670_1280.jpg",
+    "https://cdn.pixabay.com/photo/2020/10/27/07/40/cheetah-5689870__480.jpg",
+    "https://cdn.pixabay.com/photo/2020/10/29/05/02/buddhist-5695220__480.jpg",
+    "https://cdn.pixabay.com/photo/2020/10/21/19/43/jack-o-lanterns-5674148__480.jpg",
+    "https://cdn.pixabay.com/photo/2020/05/24/06/54/dumbo-5212670_1280.jpg"
+  ];
+  
+  const one =()=>{
+          document.getElementById("slider").className = "carousel-slider one"
+  }
+  const two =()=>{
+          document.getElementById("slider").className = "carousel-slider two"
+  }
+  const three =()=>{
+          document.getElementById("slider").className = "carousel-slider three"
+  }
+  const four =()=>{
+          document.getElementById("slider").className = "carousel-slider four"
+  }
+ 
+
+  return (
+    <>
+      <section className="carousel-container">
+        <div className="carousel-slider one" id="slider">
+          {Irray.map((e, i) => (
+            <img key={"c-" + i} src={e} className="carousel-image" id={"pic" + i}/>
+            
+          ))}
+        </div>
+        <div className="indicator">
+          <span onClick={one}>A</span>
+          <span onClick={two}>B</span>
+          <span onClick={three}>C</span>
+          <span onClick={four}>D</span>
+        </div>
+      </section>
+    </>
+  );
+};
 export default Carousel;

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './firebaseApps/App2/components/App';
-// import App from './TrialProjects/Aishani/Homepage/App'
+// import App from './firebaseApps/App2/components/App';
+import App from './TrialProjects/carousel/App'
 import { createStore ,applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import rootReducer from './firebaseApps/App2/redux/reducers/rootreducer';
