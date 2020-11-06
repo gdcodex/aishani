@@ -18,7 +18,7 @@ const Carousel = ({Irray}) => {
   useEffect(()=>{
    x = setTimeout(() => {
       next();
-    }, 4000);
+    }, 3000);
   })
 
   
@@ -32,8 +32,10 @@ const Carousel = ({Irray}) => {
       <section className="carousel-container">
         <div className="carousel-slider">
           {Irray.map((e, i) => (
-            <img key={"c-" + i} src={e} className={`carousel-image ${current===i? "active" : ""}`} id={"pic" + i}/>
-            
+            <>
+            <img key={"c-" + i} src={e} className={`carousel-image ${current===i? "active" : "notactive"}`} id={"pic" + i}/>
+            <img key={"c-x" + i} src={e} className={`carousel-image pseudo ${current===i? "notactive" : "active aa"}`} id={"pic" + i}/>
+            </>
           ))}
         </div>
         <div className="indicator">
