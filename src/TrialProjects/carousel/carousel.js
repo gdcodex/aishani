@@ -1,38 +1,48 @@
-import React from "react";
+import React, {useState, useEffect, useCallback} from "react";
 
 import "./carousel.css";
 
-const Carousel = () => {
-  const Irray = [
-    "https://cdn.pixabay.com/photo/2020/05/24/06/54/dumbo-5212670_1280.jpg",
-    "https://cdn.pixabay.com/photo/2020/10/27/07/40/cheetah-5689870__480.jpg",
-    "https://cdn.pixabay.com/photo/2020/10/29/05/02/buddhist-5695220__480.jpg",
-    "https://cdn.pixabay.com/photo/2020/10/21/19/43/jack-o-lanterns-5674148__480.jpg",
-  ];
+const Carousel = ({Irray}) => {
+
+
+  const [current, setcurrent] = useState(0)
+  const next = useCallback(()=>{
+    setcurrent(c=>
+    c===Irray.length-1? 0:c+1
+      );
+  },[Irray.length]);
+  const goTo =(i)=>{
+    setcurrent(i);
+  }
+  let x;
+  useEffect(()=>{
+   x = setTimeout(() => {
+      next();
+    }, 4000);
+  })
+
+  
+
+  if (!Array.isArray(Irray) || Irray.length <= 0) {
+    return null;
+  }
 
   return (
     <>
-    <a href="#jhgd">Hello</a>
       <section className="carousel-container">
-        <div className="carousel-slider" id="slider">
+        <div className="carousel-slider">
           {Irray.map((e, i) => (
-            <img
-              key={"c-" + i}
-              src={e}
-              className="carousel-image"
-              id={`pic_${i}`}
-            />
+            <img key={"c-" + i} src={e} className={`carousel-image ${current===i? "active" : ""}`} id={"pic" + i}/>
+            
           ))}
         </div>
-      </section>
         <div className="indicator">
-          <a href="#pic_0" onClick={()=>{
-
-          }}>A</a>
-          <a href="#pic_1">B</a>
-          <a href="#pic_2">C</a>
-          <a href="#pic_3">D</a>
+        <span className={`${current===0?"iac":""}`}onClick={()=>{clearTimeout(x); goTo(0)}}>A</span>
+        <span className={`${current===1?"iac":""}`}onClick={()=>{clearTimeout(x); goTo(1)}}>B</span>
+        <span className={`${current===2?"iac":""}`}onClick={()=>{clearTimeout(x); goTo(2)}}>C</span>
+        <span className={`${current===3?"iac":""}`}onClick={()=>{clearTimeout(x); goTo(3)}}>D</span>
         </div>
+      </section>
     </>
   );
 };

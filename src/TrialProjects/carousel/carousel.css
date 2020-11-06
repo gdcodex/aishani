@@ -8,85 +8,61 @@ body{
     overflow-x: hidden;
 }
 .carousel-container{
-    margin: auto;
-    transform: translateY(50px);
-    width: 600px;
-    
+    transform: translateY(100px);
 }
 .carousel-slider{
     display: flex;
-    height: 500px;
-    overflow-x: hidden;
-    /* scroll-snap-type: x mandatory; */
-    
+    width: 100vw;
+    height: 450px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: relative;
     
 }
 
-.carousel-image:hover{
+.carousel-slider:hover{
     animation-play-state: paused;
     cursor: pointer;
 }
-@keyframes carousel {
-    0%{
-        transform: translateX(-600px);
-    }
-    22%{
-        transform: translateX(-600px);
-    }
-    25%{
-        transform: translateX(-1200px);
-    }
-    47%{
-        transform: translateX(-1200px);
-    }
-    50%{
-        transform: translateX(-1800px);
-    }
-    68%{
-        transform: translateX(-1800px);
-    }
-    75%{
-        transform: translateX(0px);
-    }
-    97%{
-        transform: translateX(0px);
-    }
-    100%{
-        transform: translateX(-600px);
-    }
-}
+
 .carousel-image{
-    display: inline-flex;
-    width: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s;
-    /* animation: carousel 12s linear 0s infinite; */
+    transition: opacity ease 0.8s;
+    opacity: 0;
+}
+.active{
+    opacity: 1;
 }
 
 .indicator{
     display: flex;
-    width: 50vw;
-    padding: 40px;
+    width: 60vw;
+    padding: 10px;
+    margin: auto;
     align-items: center;
     justify-content: space-evenly;
-    transform: translateY(50px);
-    margin: auto;
+    transform: translateY(30px);
 
 }
-.indicator a {
+.indicator span {
     cursor: pointer;
     border: 1px solid palevioletred;
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color:rgb(70, 66, 66) ;
+    /* color:rgb(70, 66, 66) ; */
+    transition: background-color ease 0.5s;
 }
-.indicator a:hover {
+.indicator span:hover, .iac {
    background-color: rgb(70, 66, 66);
    color: honeydew;
 }
