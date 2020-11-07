@@ -9,15 +9,17 @@ body{
 }
 .carousel-container{
     transform: translateY(100px);
+    width: 100vw;
+    
 }
 .carousel-slider{
     display: flex;
-    width: 100vw;
+    width: 600vw;
     height: 450px;
     flex-wrap: wrap;
     overflow: hidden;
     position: relative;
-    
+    transition: transform linear 0.5s;
 }
 
 .carousel-slider:hover{
@@ -26,15 +28,15 @@ body{
 }
 
 .carousel-image{
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    left: 0;
+    left: 0; */
     width: 100vw;
     height: 100%;
     object-fit: cover;
-    transform: translateX(100vw);
-    transition: transform linear 0.5s;
-    opacity: 0;
+    /* transform: translateX(100vw); */
+  
+    opacity: 1;
 }
 .pseudo{
     transform: translateX(0vw);
