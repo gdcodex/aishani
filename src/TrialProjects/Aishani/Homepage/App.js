@@ -1,74 +1,67 @@
-import React, {useState,createContext} from 'react';
+import React, { useState, createContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from './Home'
-import Explore from '../Explore/Explore';
-import Libra from '../Libraryy/library.js';
-import Sture from '../signup/signature.js';
+import Home from "./Home";
+import Explore from "../Explore/Explore";
+import Libra from "../Libraryy/library.js";
+import Sture from "../signup/signature.js";
 
 const FirstName = createContext();
-const App = () =>{
+const App = () => {
+  // const Change={a:'nav-ul',b:'navul',c:'navu',d:'na',
+  //                 e:'genre',f:'enre'}
+  const Change = {
+    a: { a: "nav-ul" },
+    b: {
+      a: "navul",
+      b: "genre",
+      types: [
+        "Pop",
+        "Party",
+        "Workout",
+        "Chill",
+        "R&B Soul",
+        "Hip-hop",
+        "Romance",
+        "Oldies",
+        "Devotional",
+      ],
+    },
 
-    // const Change={a:'nav-ul',b:'navul',c:'navu',d:'na',
-    //                 e:'genre',f:'enre'}
-        const Change=
-                    {
-                    a:{a:"nav-ul"  },
-                    b:{a:"navul", b:"genre" ,
-                      types:{a:"Pop",b:"Party",c:"Workout",d:"Chill",e:"R&B Soul",
-                      f:"Hip-hop",g:"Romance",h:"Oldies",i:"Devotional"} },
+    c: { a: "navu", b: "enre", types: {} },
+    d: { a: "na" },
+  };
 
-                    c:{a:"navu",b:"enre",
-                       types:{} },
-                    d:{a:"na"}
-
-                    }
- 
-
-
-    return(
-        <Router>
-        
-          <FirstName.Provider  value={Change.a}>  <Route path='/aish' exact component={Home} />   </FirstName.Provider>
-          <FirstName.Provider  value={Change.b}>  <Route path='/explore' exact component={Explore} />   </FirstName.Provider>
-          <FirstName.Provider  value={Change.c}>  <Route path='/library' exact component={Libra} />   </FirstName.Provider>
-          <FirstName.Provider  value={Change.c}>  <Route path='/library/:id' exact component={Libra} />   </FirstName.Provider>
-          <FirstName.Provider  value={Change.d}>  <Route path='/signup' exact component={Sture} />   </FirstName.Provider>
-            
-        </Router>
-    )
+  return (
+    <Router>
+      <FirstName.Provider value={Change.a}>
+        {" "}
+        <Route path="/aish" exact component={Home} />{" "}
+      </FirstName.Provider>
+      <FirstName.Provider value={Change.b}>
+        {" "}
+        <Route path="/explore" exact component={Explore} />{" "}
+      </FirstName.Provider>
+      <FirstName.Provider value={Change.c}>
+        {" "}
+        <Route path="/library" exact component={Libra} />{" "}
+      </FirstName.Provider>
+      <FirstName.Provider value={Change.c}>
+        {" "}
+        <Route path="/library/:id" exact component={Libra} />{" "}
+      </FirstName.Provider>
+      <FirstName.Provider value={Change.d}>
+        {" "}
+        <Route path="/signup" exact component={Sture} />{" "}
+      </FirstName.Provider>
+    </Router>
+  );
 };
 
-
 export default App;
-export {FirstName};
+export { FirstName };
 
+// const [state, setstate] = useState("taylor swift");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // const [state, setstate] = useState("taylor swift");
-
-    
 // const getSong = async()=>{
 //  const data = await   axios({
 //                             "method":"GET",
@@ -87,6 +80,5 @@ export {FirstName};
 
 //                             console.log(res.response.results);
 
-
 //                         };
-                        // getSong();
+// getSong();
