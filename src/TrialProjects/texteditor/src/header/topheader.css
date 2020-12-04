@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+}
+.header-container{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateX(72px);
+    margin-right: 72px;
+    background-color: rgb(81,195,216);
+    color: white;
+    height: 65px;
+    overflow: hidden;
+}
+
+.header-container section{
+    display: flex;
+    align-items: center;
+
+}
+.header-left{
+    padding-left: 15px;
+}
+.back-arrow{
+    margin: 0 10px;
+    cursor: pointer;
+    padding: 8px 6px;
+    transition: 0.4s background-color ease;
+}
+.back-arrow:hover{
+    background-color:   rgb(75, 185, 204);
+}
+.header-right{
+    /* width: 50%; */
+    flex-direction: row-reverse;
+    /* background-color: yellow; */
+}
+.profile-avatar{
+    width: 40px;
+    height: 40px;
+    margin: 0 20px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.upgrade{
+    padding: 4px 10px;
+    border: 2px solid white;
+    border-radius: 4px;
+    background-color: rgb(116,207,224);
+    font-size: smaller;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.4s background-color ease;
+}
+.upgrade:hover{
+    background-color:  rgb(140, 197, 207);
+}
+@media only screen and (max-width:650px){
+    .side-header{
+        width: 50px;
+    }
+    .header-container{
+        transform: translateX(52px);
+        margin-right: 52px;
+    }
+}
+@media only screen and (max-width:361px){
+    .heading{
+        overflow: hidden;
+        width: 90%;
+        height: 18.6667px;
+    }
+    .side-header{
+        width: 35px;
+    }
+    .logo{
+        width: 25px;
+    }
+    .header-container{
+        transform: translateX(37px);
+        margin-right: 37px;
+    }
+    .upgrade{
+        font-size: x-small;
+    }
+    .header-left{
+        padding-left: 5px;
+    }
+    .back-arrow{
+        margin: 0 5px;
+        cursor: pointer;
+        padding: 5px 3px;
+    }
+    .side-bottom{
+        font-size: xx-small;
+    }
+    .side-bottom img{
+        width: 20px;
+    }
+}

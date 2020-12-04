@@ -1,0 +1,33 @@
+.header-container{
+    display: flex;
+}
+.control-params{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: rgb(128,144,163);
+    padding: 6px 8px;
+    border-radius: 4px;
+    margin: 0 8px;
+    white-space: nowrap;
+}
+.control-params img{
+    margin-left: 10px;
+}
+.control-params span{
+    font-size: small;
+    margin-left: 10px;
+    max-width: 100px;
+    overflow: hidden;
+}
+.control-first{
+    display: flex;
+    width: 70%;
+    align-items: center;
+}
+.control-second{
+    display: flex;
+}
+.control-second p{
+    margin: 10px;
+}
