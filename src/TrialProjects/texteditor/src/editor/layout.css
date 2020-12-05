@@ -1,0 +1,25 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.layout-container {
+  transform: translate(72px,100px);
+  margin-right: 72px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  flex: auto;
+  overflow-y: scroll;
+  position: relative;
+}
+.layout {
+  width: 73.34vw;
+  height: 95vw;
+  position: absolute;
+  -webkit-box-shadow: 0px 0px 6px 1px rgba(199, 199, 199, 1);
+  -moz-box-shadow: 0px 0px 6px 1px rgba(199, 199, 199, 1);
+  box-shadow: 0px 0px 6px 1px rgba(199, 199, 199, 1);
+  outline: none;
+  padding: 70px;
+}

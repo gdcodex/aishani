@@ -1,17 +1,23 @@
-import React from 'react'
+import React,{useState} from 'react'
+import Controlvalues from './controlvalues'
 
 function Controlparams(props) {
+   const [text, settext] = useState("Sansserifevhcfbcfcuvur");
     return (
-        <div className="control-params">
-       {props.text &&
-        <span>{props.text}</span>
+        <section className="control-box">
+        <a href="#" className="control-params" style={{width:props.img?"auto":"100px"}} onClick={props.onclick}>
+       {
+       !props.img && <span>{text}</span>
        }
        {
            props.img &&
            <img src={props.img} alt="img"/>
        }
-        <img src="./dropdown.svg" alt="controls"/>
-    </div>
+        {!props.none && <img src="./dropdown.svg" alt="controls"/>}
+    </a>
+  
+    {/* <Controlvalues values={["Bolddffgvrbgrtb","Italics","Underlined","fuckl offjchdefbiufguirfgvu","vedfucu","juuegf","yyvc","yfgceyicg"]} settext={settext}/> */}
+    </section>
     )
 }
 

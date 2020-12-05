@@ -1,12 +1,14 @@
 import React from 'react'
-import Controls from './editor/controls'
+import Layout from './editor/layout'
 import Header from './header/header'
 
 function App() {
     return (
         <>
+        <div className="app-container">
       <Header/>
-      <Controls/>
+      <Layout/>
+        </div>
       </>
     )
 }

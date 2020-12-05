@@ -49,6 +49,8 @@ body{
     cursor: pointer;
 }
 .upgrade{
+    display: flex;
+    align-items: center;
     padding: 4px 10px;
     border: 2px solid white;
     border-radius: 4px;
@@ -65,12 +67,23 @@ body{
     .side-header{
         width: 50px;
     }
-    .header-container{
+    .header-container,.layout-container{
         transform: translateX(52px);
         margin-right: 52px;
     }
+    .layout{
+        height: 110vw;
+        padding: 30px;
+    }
+    .layout-container::-webkit-scrollbar{
+        display: none;
+    }
 }
 @media only screen and (max-width:361px){
+    .layout{
+        height: 130vw;
+        padding: 20px;
+    }
     .heading{
         overflow: hidden;
         width: 90%;
@@ -82,7 +95,7 @@ body{
     .logo{
         width: 25px;
     }
-    .header-container{
+    .header-container,.layout-container{
         transform: translateX(37px);
         margin-right: 37px;
     }
