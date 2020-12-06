@@ -17,10 +17,48 @@
     border-radius: 4px;
     overflow-x: hidden;
     overflow-y: scroll;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.list{
+    position: absolute;
+    top: 75px;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 4px;
+    transform: translateX(15px);
+    border: 1px solid rgb(184, 187, 190);
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+}
+#img-drop{
+    transition: transform 0.4s ease;
+}
+.open-img{
+    transform: rotateZ(0);
+}
+.close-img{
+    transform: rotateZ(180deg);
 }
 .values::-webkit-scrollbar{
     opacity: 0;
 }
-.list{
-    list-style: none;
+.values a{
+    text-decoration: none;
+}
+.values a:hover{
+    color:rgb(133, 130, 130) ;
+}
+.list img:hover{
+    background-color:rgb(133, 130, 130);
+}
+@media only screen and (max-width:830px){
+    .values,.list{
+        right: 40vw;
+    }
 }

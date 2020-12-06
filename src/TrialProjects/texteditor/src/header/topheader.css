@@ -37,9 +37,7 @@ body{
     background-color:   rgb(75, 185, 204);
 }
 .header-right{
-    /* width: 50%; */
     flex-direction: row-reverse;
-    /* background-color: yellow; */
 }
 .profile-avatar{
     width: 40px;

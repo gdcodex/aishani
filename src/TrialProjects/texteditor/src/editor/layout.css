@@ -4,7 +4,7 @@
   height: 100vh;
 }
 .layout-container {
-  transform: translate(72px,100px);
+  transform: translateX(72px);
   margin-right: 72px;
   display: flex;
   justify-content: center;
@@ -12,6 +12,11 @@
   flex: auto;
   overflow-y: scroll;
   position: relative;
+  padding-top: 100px;
+}
+.global{
+  transform: translate(72px,100px);
+  padding-top: 20px;
 }
 .layout {
   width: 73.34vw;
