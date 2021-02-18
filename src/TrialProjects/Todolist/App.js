@@ -68,14 +68,14 @@ const App = () => {
 
 
 
+    {/* <input type="text" name="todo" value={todo}  onChange={(e)=>{
+    console.log(e.target.value);
+    settodo([e.target.value])
+}}/> */}
     return (
         <>
             <div className="todo-layout">
                 <div className="add-todos">
-                    {/* <input type="text" name="todo" value={todo}  onChange={(e)=>{
-                    console.log(e.target.value);
-                    settodo([e.target.value])
-                }}/> */}
 
 
                     <TextField label="todos" size="small" margin="normal" color='secondary' id="outlined-secondary" variant="outlined" name="todo" value={todo} onChange={(e) => {
